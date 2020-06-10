@@ -11,28 +11,11 @@ include <./includes.scad>
 // example key
 $font="DejaVu Sans Mono:style=Book";
 $font="Hack Nerd Font:style=Regular";
+$font="Signpainter:style=HouseScript Semibold";
+
 $inset_legend_depth = 0.4;
-$outset_legend_depth = 0.2;
 
-$outset_legends = true;
-$key_height = 20;
-
-
-dcs_row(4) 2uh() 
-// arrow
-legend("︎", size=5, [0,-0.35])
-
-// trash
-legend("", size=5,[0,0.6])
-
-
-key(key_height = 1);
-
-
-//legends = [  "a", "o﫧"  ];
-//dcs_row(4) 2uh() legend(legends[x][1], [-1,1]) 
-     //   legend(legends[x][2], [1,-1]) 
-       //     key();
-          
-      
-//dcs_row(4) 2uh() legend("A", size=5) key();
+legends = ["P", "Q", "G", "C"];
+for(y=[0:3]) {
+  translate_u(0,y) 1u() sa_row() legend(legends[y], [0,0, 6]) key();
+}
