@@ -10,9 +10,8 @@ include <../includes.scad>
 
 /* $outset_legends = true; */
 legends = [
-  ["a", "b", "c", "d"],
-  ["e", "f", "g", "h"],
-  ["i", "j", "k", "l"],
+  ["|", "\\", "{", "["],
+  ["{", "[", "g", "h"],
 ];
 
 $font_size = 4;
@@ -21,11 +20,9 @@ for (x=[0:len(legends)-1]) {
   translate_u(x,0) {
     legend(legends[x][0], [-1,-1]) {
       legend(legends[x][1], [-1,1]) {
-        legend(legends[x][2], [1,-1]) {
-          front_legend(legends[x][3]) {
             key();
-          }
-        }
+          
+        
       }
     }
   }
