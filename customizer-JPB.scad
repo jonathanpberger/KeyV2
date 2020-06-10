@@ -4425,7 +4425,7 @@ $front_legends = [];
 $front_print_legends = false;
 
 // how recessed inset legends / artisans are from the top of the key
-$inset_legend_depth = 0.2;
+$inset_legend_depth = 0.4;
 
 // Dimensions of alps stem
 $alps_stem = [4.45, 2.25];
@@ -4470,12 +4470,33 @@ key_profile(key_profile, row) legend(legend) {
  // key();
 }
 
-/*
-legends = ["J", "K", "X", "U", "I","Y","F","D","H","B","M","W"];
-for(y=[0:3]) {
-  translate_u(0,y) 1u() sa_row() legend(legends[y], [0,0, 6]) key();
-}
 
+// legends = ["J", "K", "X", "U", "I","Y","F","D","H","B","M","W"];
+
+legends = [ 
+  ["~", "`"],
+  [":", ";"],
+  [">", "."],
+  ["$", "4"],
+  ["%", "5"],
+  ["}", "]"],
+
+];
+
+
+
+
+for (x=[0:len(legends)-1]) {
+      translate_u(x%3,floor(x/3)) 1u() sa_row(){
+
+    //legend(legends[y], [0,0, 6]) key();
+    
+    
+    legend(legends[x][0], [-0.7,-0.75]) {
+      legend(legends[x][1], [0.5,0.75]) {
+            key();
+}}}}
+/*
 for(y=[4:7]) {
   translate_u(1,y-4) 1u() sa_row() legend(legends[y], [0,0, 6]) key();
 }
@@ -4485,14 +4506,14 @@ for(y=[8:11]) {
 }
 
 
-*/
 
+/*
 legends = [/*
   ["~", "`", "{", "["],
   [":", ";", "g", "h"],
   [">", ".", "g", "h"],
   ["$", "4", "g", "h"],
-  ["%", "5", "g", "h"], */
+  ["%", "5", "g", "h"], 
   ["^", "6", "g", "h"], 
   //["&", "7", "g", "h"]
 
@@ -4514,7 +4535,7 @@ for (x=[0:len(legends)-1]) {
   }
 }
 
-
+*/
 
 
 
