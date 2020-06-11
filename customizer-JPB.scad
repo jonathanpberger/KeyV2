@@ -4483,6 +4483,7 @@ legends = [
 
 ];
 
+$inset_legend_depth = 0.4;
 
 
 
