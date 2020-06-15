@@ -10,12 +10,69 @@ include <./includes.scad>
 
 // example key
 $font="DejaVu Sans Mono:style=Book";
+$font_size = 10;
 $font="Hack Nerd Font:style=Regular";
 $font="Signpainter:style=HouseScript Semibold";
 
-$inset_legend_depth = 0.4;
+$inset_legend_depth = 0.5;
 
-legends = ["P", "Q", "G", "C"];
-for(y=[0:3]) {
-  translate_u(0,y) 1u() sa_row() legend(legends[y], [0,0, 6]) key();
+
+// legends_inset = ["A", "R", "L","S"];
+// for(y=[0:3]) {
+//   translate_u(-1,y) 1u() sa_row() legend(legends_inset[y], [-0.2,0]) key();
+// }
+
+
+//outset
+// legends_outset = ["⬆︎","⬅︎","➡︎","⬇︎"];
+legends_outset = ["H","U"];
+//$outset_legends = true;
+
+// for(y=[0:1]) {
+//   translate_u(1,y) 1u() sa_row() legend(legends_outset[y], [0,0]) key();
+// }
+
+
+
+outer_legends = [
+  ["!", "1"],
+  ["@", "2"],
+  ["#", "3"],
+  ["*", "8"],
+  ["(", "9"],
+  [")", "0"],
+  ["\"", "\'"],
+  ["<", ","]
+];
+
+middle_legends = [
+  ["$", "4"],
+  ["%", "5"],
+
+];
+
+inner_legends = [
+  ["±", "§"],
+  ["|", "\\"],
+  ["|", "/"],
+
+  ["{", "["],
+
+];
+
+//$inset_legend_depth = 0.4;
+
+$font_size = 7;
+
+for (x=[0:len(inner_legends)-1]) {
+  translate_u(x%2,floor(x/2)) {
+    legend(inner_legends[x][0], [-0.7,-0.75]) {
+      legend(inner_legends[x][1], [0.5,0.75]) {
+            key();
+          
+        
+      }
+    }
+  }
 }
+
