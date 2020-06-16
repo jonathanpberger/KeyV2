@@ -4297,7 +4297,7 @@ $stem_support_type = "tines"; // [tines, brim, disabled]
 
 // make legends outset instead of inset.
 // broken off from artisan support since who wants outset legends?
-$outset_legends = false;
+
 
 /* [Key] */
 // Height in units of key. should remain 1 for most uses
@@ -4474,26 +4474,26 @@ key_profile(key_profile, row) legend(legend) {
 // legends = ["J", "K", "X", "U", "I","Y","F","D","H","B","M","W"];
 
 legends = [ 
-  ["~", "`"],
-  [":", ";"],
-  [">", "."],
-  ["$", "4"],
-  ["%", "5"],
-  ["}", "]"],
+
+
+  ["\"", "\'"],
+  ["<", ","],
+ 
 
 ];
 
-$inset_legend_depth = 0.4;
+$inset_legend_depth = 0.65;
+$font_size = 11;
 
 
 
 for (x=[0:len(legends)-1]) {
-      translate_u(x%3,floor(x/3)) 1u() sa_row(){
+      translate_u(x%4,floor(x/4)) 1u() sa_row(){
 
     //legend(legends[y], [0,0, 6]) key();
     
     
-    legend(legends[x][0], [-0.7,-0.75]) {
+    legend(legends[x][0], [-0.7,-0.55]) {
       legend(legends[x][1], [0.5,0.75]) {
             key();
 }}}}
