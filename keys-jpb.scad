@@ -1,3 +1,16 @@
+
+//////////////////////////////////////////// EVERNYDTHING PRINTS ALL WAV{Y!!!} Use customizer instwead
+
+
+
+
+/*
+
+
+
+
+
+
 // the point of this file is to be a sort of DSL for constructing keycaps.
 // when you create a method chain you are just changing the parameters
 // key.scad uses, it doesn't generate anything itself until the end. This
@@ -75,4 +88,3 @@ for (x=[0:len(inner_legends)-1]) {
     }
   }
 }
-
