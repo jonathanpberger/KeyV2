@@ -4471,40 +4471,91 @@ key_profile(key_profile, row) legend(legend) {
 }
 
 
-// legends = ["J", "K", "X", "U", "I","Y","F","D","H","B","M","W"];
-
-legends = [ 
 
 
-  ["\"", "\'"],
-  ["<", ","],
- 
 
+$inset_legend_depth = 0.6;
+
+$font_size = 7.25;
+
+ legends = [
+  
+  ["$","4"],
+  ["%","5"],
+  [":",";"],
+  [">","."],
+  ["}","]"],
+  ["~","`"],
+  ["^","6"],
+  ["&","7"],
+
+   
 ];
-
-$inset_legend_depth = 0.65;
-$font_size = 11;
-
 
 
 for (x=[0:len(legends)-1]) {
-      translate_u(x%4,floor(x/4)) 1u() sa_row(){
-
-    //legend(legends[y], [0,0, 6]) key();
     
-    
-    legend(legends[x][0], [-0.7,-0.55]) {
+  translate_u((1*x)%4,floor(x/4)) {
+    legend(legends[x][0], [-0.7,-0.75]) {
       legend(legends[x][1], [0.5,0.75]) {
-            key();
-}}}}
-/*
-for(y=[4:7]) {
-  translate_u(1,y-4) 1u() sa_row() legend(legends[y], [0,0, 6]) key();
+           1u() sa_row() key();
+          
+        
+      }
+    }
+  }
 }
 
-for(y=[8:11]) {
-  translate_u(2,y-8) 1u() sa_row() legend(legends[y], [0,0, 6]) key();
+/*
+// ///////////////// 2UH height
+$inset_legend_depth = 0.5;
+
+$font_size = 3.5;
+
+ legends = [
+  
+  ["BACK","SPACE"],
+  ["DELETE"],
+  ["ENTER"],
+  ["SPACE"],
+
+ 
+];
+
+
+for (x=[0:len(legends)-1]) {
+    
+  translate_u((1*x)%4,floor(x/4)) {
+    legend(legends[x][0], [-0.3,-0.55]) {
+      legend(legends[x][1], [-0.3,-0.15]) {
+           // 1_25u() sa_row() key();
+            2uh() sa_row() key();
+          
+        
+      }
+    }
+  }
 }
+*/
+
+/*
+// ///////////////////// 1u keys
+
+$inset_legend_depth = 0.5;
+$font_size = 8;
+
+legends = ["A", "R", "L", "S"];
+
+
+for (x=[0:len(legends)-1]) {
+      translate_u(x%2,floor(x/2)) 1u() sa_row(){
+
+    legend(legends[x], [0,0, 6]) key();
+    
+}}
+
+
+*/
 
 
 
