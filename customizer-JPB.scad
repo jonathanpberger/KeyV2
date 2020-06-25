@@ -4470,25 +4470,44 @@ key_profile(key_profile, row) legend(legend) {
  // key();
 }
 
-
-
-
-
+/////// JPB WORK BELOW HERE/////////////////////////////////
 $inset_legend_depth = 0.6;
-
 $font_size = 7.25;
+
+
+translate_u(0.1,3) {legend("SHIFT", size=6) 1_25u() sa_row() key();}
+translate_u(0.1,2) {legend("TAB", size=6) 1_25u() sa_row() key();}
+translate_u(1.5,3) {legend("CTRL", size=6) 1_25u() sa_row() key();}
+translate_u(1.5,2) {legend("SHIFT", size=6) 1_25u() sa_row() key();}
+
+
+translate_u(2,1) {legend("ALT", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
+translate_u(3,1) {legend("HOME", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
+translate_u(1,1) {legend("END", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
+translate_u(0,1) {legend("CTRL", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
+
+translate_u(1,0) {legend("ALT", [-0.3,-0.55], size=3.5) 1u() sa_row() key();}
+
+
+translate_u(2,0) {legend("PAGE", [-0.3,-0.75], size=3.5) legend("DOWN", [-0.2,0.35],size=3.5)1u() sa_row() key();}
+translate_u(3,0) {legend("PAGE", [-0.3,-0.75], size=3.5) legend("UP", [-0.8,0.35],size=3.5)1u() sa_row() key();}
+
+
+
 
  legends = [
   
-  ["$","4"],
-  ["%","5"],
+  [")","0"],
+
+
+ /* ["%","5"],
   [":",";"],
   [">","."],
   ["}","]"],
   ["~","`"],
   ["^","6"],
   ["&","7"],
-
+*/
    
 ];
 
@@ -4499,8 +4518,6 @@ for (x=[0:len(legends)-1]) {
     legend(legends[x][0], [-0.7,-0.75]) {
       legend(legends[x][1], [0.5,0.75]) {
            1u() sa_row() key();
-          
-        
       }
     }
   }
