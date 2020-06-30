@@ -128,12 +128,6 @@ $cherry_bevel = true;
 
 // How tall in mm the stem support is, if there is any. stem support sits around the keystem and helps to secure it while printing.
 $stem_support_height = .8;
-// Font used for text
- $font="Comic Sans MS:style=Regular ";
- $font="DejaVu Sans Mono:style=Bold Oblique";
-
- $font="Helvetica";
- $font="Signpainter:style=HouseScript Semibold";
 
 // Whether or not to render fake keyswitches to check clearances
 $clearance_check = false;
@@ -4474,26 +4468,67 @@ key_profile(key_profile, row) legend(legend) {
 $inset_legend_depth = 0.6;
 $font_size = 7.25;
 
+////////// Font used for text
+ //$font="Space Mono for Powerline:style=Regular ";
+ //font="DejaVu Sans Mono:style=Bold";
 
-translate_u(0.1,3) {legend("SHIFT", size=6) 1_25u() sa_row() key();}
-translate_u(0.1,2) {legend("TAB", size=6) 1_25u() sa_row() key();}
+ $font="SF Pro Text:style=Black";
+ //$font="Helvetica";
+ //$font="Signpainter:style=HouseScript Semibold";
+
+
+/*
+translate_u(0.1,3) {legend("➘", size=6) 1_25u() sa_row() key();}
+translate_u(0.1,2) {legend("💀", size=6) 2uh() 1u() sa_row() key();}
 translate_u(1.5,3) {legend("CTRL", size=6) 1_25u() sa_row() key();}
 translate_u(1.5,2) {legend("SHIFT", size=6) 1_25u() sa_row() key();}
+*/
+
+translate_u(2,0) {legend("⌥", [-0.3,0], depth=0.4, size=7) 1u() sa_row() key();}
+translate_u(3,0) {legend("⌥", [-0.3,0], depth=0.4, size=7) 1u() sa_row() key();}
+translate_u(1,0) {legend("^", [-0,0.3], depth=0.4, size=9) 1u() sa_row() key();}
+translate_u(0,0) {legend("^", [-0,0.3], depth=0.4, size=9) 1u() sa_row() key();}
+
+/*
+
+translate_u(0,0) sa_row() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Backspace_764775.stl");
+};
 
 
-translate_u(2,1) {legend("ALT", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
-translate_u(3,1) {legend("HOME", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
-translate_u(1,1) {legend("END", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
-translate_u(0,1) {legend("CTRL", [-0.3,-0.55], depth=0.4, size=3.5) 1u() sa_row() key();}
-
-translate_u(1,0) {legend("ALT", [-0.3,-0.55], size=3.5) 1u() sa_row() key();}
+translate_u(1,0) sa_row() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Backspace_764775.stl");
+};
 
 
-translate_u(2,0) {legend("PAGE", [-0.3,-0.75], size=3.5) legend("DOWN", [-0.2,0.35],size=3.5)1u() sa_row() key();}
-translate_u(3,0) {legend("PAGE", [-0.3,-0.75], size=3.5) legend("UP", [-0.8,0.35],size=3.5)1u() sa_row() key();}
+translate_u(2,0) sa_row() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Backspace_764775.stl");
+};
 
 
+translate_u(3,0) sa_row() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Backspace_764775.stl");
+};
+*/
 
+translate_u(0,-2) sa_row() 2uh() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Backspace_764775.stl");
+};
+translate_u(1,-2) sa_row() 2uh() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Delete_712753.stl");
+};
+
+translate_u(2,-2) sa_row() 2uh() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Enter_715672.stl");
+};
+
+translate_u(3,-2) sa_row() 2uh() 1u() key() {
+  translate([0,0,0]) scale(0.15) import("assets/noun_Space_3167235.stl");
+};
+
+// svg to stl from https://rawgit.com/ryancalme/svg-to-stl/master/SVGtoSTL.html
+
+/*
 
  legends = [
   
@@ -4508,7 +4543,7 @@ translate_u(3,0) {legend("PAGE", [-0.3,-0.75], size=3.5) legend("UP", [-0.8,0.35
   ["^","6"],
   ["&","7"],
 */
-   
+   /*
 ];
 
 
@@ -4522,6 +4557,7 @@ for (x=[0:len(legends)-1]) {
     }
   }
 }
+*/
 
 /*
 // ///////////////// 2UH height
